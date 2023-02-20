@@ -12,4 +12,4 @@ crate-type = ["cdylib"]
 [dependencies]
 binrw = "0.10.0"
 libflate = "1.2.0"
-pyo3 = { version = "0.18.1", features = ["extension-module"] }
+pyo3 = { version = "0.18.1", features = ["extension-module", "abi3"] }
