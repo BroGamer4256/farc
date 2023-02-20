@@ -1,4 +1,3 @@
-#![feature(file_create_new)]
 #![allow(dead_code)]
 use binrw::prelude::*;
 use binrw::*;
@@ -172,7 +171,7 @@ impl Farc {
 	}
 
 	pub fn write(self, path: &str, compress: bool) -> Result<(), FarcError> {
-		let mut file = std::fs::File::create_new(path)?;
+		let mut file = std::fs::File::create(path)?;
 		let compressed_data = if compress {
 			self.entries
 				.iter()
