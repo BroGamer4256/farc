@@ -1,0 +1,14 @@
+[package]
+name = "farc"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "farc"
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+binary_parser = { git = "https://github.com/BroGamer4256/binary_parser" }
+libflate = "2.0"
+thiserror = "1.0.56"
+pyo3 = { version = "0.20", features = ["extension-module"] }
