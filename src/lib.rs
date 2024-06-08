@@ -97,16 +97,8 @@ impl Farc {
 	}
 
 	pub fn write_file<P: AsRef<Path>>(&self, path: P, compress: bool) -> Result<()> {
-		if self
-			.entries
-			.iter()
-			.find(|(_, data)| data.pending_writes())
-			.is_some()
-		{
-			return Err(FarcError::PendingWrites);
-		}
-		let mut file = File::create(path)?;
 		let parser = self.write_parser(compress)?;
+		let mut file = File::create(path)?;
 		file.write(&parser.to_buf_const().unwrap())?;
 		Ok(())
 	}
