@@ -8,6 +8,7 @@ use std::{
 };
 use thiserror::Error;
 
+#[cfg(feature = "python")]
 pub mod py;
 
 pub struct Farc {
